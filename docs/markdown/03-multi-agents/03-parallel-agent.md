@@ -4,11 +4,9 @@
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code" -->
 
 # Parallel Agent : Vue d'ensemble
-
-<br>
 
 ## Exécution simultanée de tâches
 
@@ -24,8 +22,6 @@ Start ─┼─ Agent 2 ─┼─ Agrégation ─ Résultat
        └─ Agent 3 ─┘
 ```
 
-<br>
-
 ### Caractéristiques :
 - ⚡ Exécution concurrente
 - 📦 Agrégation des résultats
@@ -39,8 +35,6 @@ Comme un manager qui assigne des tâches à plusieurs employés simultanément
 <!-- .slide -->
 
 # Quand utiliser Parallel Agent ?
-
-<br>
 
 ## Cas d'usage typiques
 
@@ -63,18 +57,17 @@ Analyse Concurrent A + Concurrent B + Concurrent C
 
 <br>
 
-> **Règle d'or** : Utilisez Parallel Agent quand les tâches sont **indépendantes** et n'ont pas besoin des résultats des autres
+Utilisez Parallel Agent quand les tâches sont **indépendantes** et n'ont pas besoin des résultats des autres
+<!-- .element: class="admonition important" -->
 
 Notes:
 Optimisation de performance : réduit le temps total d'exécution
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Parallel Agent : Implémentation
-
-<br>
 
 ## Code Python
 
@@ -109,11 +102,9 @@ Les trois agents s'exécutent simultanément, pas d'ordre garanti
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code" -->
 
 # Agrégation des résultats
-
-<br>
 
 ## Gestion des résultats parallèles
 
@@ -122,7 +113,7 @@ Les trois agents s'exécutent simultanément, pas d'ordre garanti
 ### Points clés :
 
 - ⏱️ **Timing** : Les agents peuvent terminer à des moments différents
-- 🔄 **Collecte** : Les résultats sont collectés après que tous les agents aient terminé
+- 🔄 **Collecte** : Les résultats sont collectés après que tous les agents ont terminé
 - ❌ **Gestion d'erreurs** : Si un agent échoue, les autres continuent
 - 📊 **Combinaison** : Les résultats sont disponibles dans `ctx.session.state`
 
@@ -142,15 +133,11 @@ Le ParallelAgent attend que tous les sous-agents se terminent avant de continuer
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Exemple pratique : Analyse concurrentielle
 
-<br>
-
 ## Recherche sur plusieurs concurrents simultanément
-
-<br>
 
 ```python
 competitor1_agent = LlmAgent(

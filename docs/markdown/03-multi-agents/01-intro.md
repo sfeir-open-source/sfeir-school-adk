@@ -23,15 +23,13 @@ Un **système multi-agents** est une collection d'agents individuels et autonome
 - **Comportement émergent** : Des comportements complexes émergent de simples interactions
 
 Notes:
-Analogie : Une volée d'oiseaux - pas de leader, mais des motifs coordonnés incroyables
+Analogie : Une volée d'oiseaux - pas de leader, mais des motifs coordonnés
 
 ##==##
 
 <!-- .slide -->
 
 # Pourquoi les systèmes multi-agents ?
-
-<br>
 
 ## Avantages de l'approche collaborative
 
@@ -44,7 +42,9 @@ Analogie : Une volée d'oiseaux - pas de leader, mais des motifs coordonnés inc
 
 <br>
 
-> Les agents travaillant ensemble peuvent résoudre des tâches qu'aucun agent seul ne pourrait accomplir facilement.
+Les agents travaillant ensemble peuvent résoudre des tâches qu'aucun agent seul ne pourrait accomplir facilement.
+
+<!-- .element: class="admonition note" -->
 
 Notes:
 Exemple : Système de support client avec agents spécialisés (facturation, technique, retours)
@@ -55,15 +55,13 @@ Exemple : Système de support client avec agents spécialisés (facturation, tec
 
 # Les types d'agents ADK
 
-<br>
-
 ## ADK fournit trois types d'agents principaux
 
 <br>
 
 | Type | Rôle | Utilisation |
 |------|------|-------------|
-| **LLM Agents** | Le "cerveau" 🧠 | Raisonnement avec LLM (Gemini) |
+| **LLM Agents** | Le "cerveau" 🧠 | Raisonnement avec LLM |
 | **Workflow Agents** | Le "manager" 📋 | Orchestration du flux d'exécution |
 | **Custom Agents** | Le "spécialiste" 🔧 | Logique personnalisée complexe |
 
@@ -79,8 +77,6 @@ Notes:
 <!-- .slide -->
 
 # Hiérarchie des agents
-
-<br>
 
 ## Organisation structurée des agents
 
@@ -110,8 +106,6 @@ Analogie : Organigramme d'entreprise - ligne de commande et flux de données cla
 <!-- .slide -->
 
 # Communication entre agents
-
-<br>
 
 ## Trois mécanismes principaux
 

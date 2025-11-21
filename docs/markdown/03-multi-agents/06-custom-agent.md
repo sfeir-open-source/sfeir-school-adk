@@ -8,15 +8,9 @@
 
 # Custom Agent : Concept
 
-<br>
-
 ## Au-delà des workflows prédéfinis
 
-<br>
-
-Un **Custom Agent** étend `BaseAgent` et implémente sa propre logique d'orchestration via `_run_async_impl`.
-
-<br>
+Un **Custom Agent** hérite de `BaseAgent` et implémente sa propre logique d'orchestration via `_run_async_impl`.
 
 ### Caractéristiques :
 - 🎨 **Contrôle total** sur la logique d'exécution
@@ -24,17 +18,17 @@ Un **Custom Agent** étend `BaseAgent` et implémente sa propre logique d'orches
 - 🧩 **Patterns uniques** non couverts par Sequential/Parallel/Loop
 - 🔧 **Intégrations externes** (APIs, DB, etc.)
 
-<br>
+Maîtrisez d'abord LLMAgent et WorkflowAgent
+<!-- .element: class="admonition warning" -->
 
-> ⚠️ **Concept avancé** : Maîtrisez d'abord LLMAgent et WorkflowAgent
-
-Notes:
 Utilisez Custom Agent quand Sequential, Parallel, Loop ne suffisent pas
+<!-- .element: class="admonition note" -->
+
+##==##
+
 <!-- .slide -->
 
 # Quand utiliser Custom Agent ?
-
-<br>
 
 ## Situations nécessitant un contrôle personnalisé
 
@@ -46,24 +40,19 @@ Différents chemins selon les conditions runtime
 ### 📊 **Gestion d'état complexe**
 Logique de state management sophistiquée
 
-### 🌐 **Intégrations externes**
-Appels APIs, bases de données, bibliothèques custom
-
 ### 🎯 **Sélection dynamique d'agents**
 Choisir les sous-agents à la volée
 
-### 🔧 **Patterns de workflow uniques**
-Orchestrations qui ne rentrent pas dans Sequential/Parallel/Loop
+En bref : à utiliser lorsque les workflows prédéfinis ne suffisent pas
+<!-- .element: class="admonition note" -->
 
-Notes:
-Si vous vous demandez "puis-je faire ça avec Sequential/Parallel/Loop ?" et la réponse est non, utilisez Custom Agent
-<!-- .slide -->
+##==##
+
+<!-- .slide: class="with-code max-height" -->
 
 # Structure d'un Custom Agent
 
-<br>
-
-## Extension de BaseAgent
+## Héritage de BaseAgent
 
 ```python
 from google.adk.agents import BaseAgent, LlmAgent
@@ -71,19 +60,14 @@ from google.adk.types import SessionContext
 
 class StoryFlowAgent(BaseAgent):
     def __init__(self, name: str):
+        # Initialisation de l'agent
         super().__init__(name=name)
-        
-        # Définir les sous-agents
         self.planner = LlmAgent(name="Planner", ...)
         self.writer = LlmAgent(name="Writer", ...)
         self.editor = LlmAgent(name="Editor", ...)
     
     async def _run_async_impl(self, ctx: SessionContext):
-        # Logique d'orchestration personnalisée
-        
-        # 1. Planification
-        plan = await self.planner.run_async(ctx)
-        
+        plan = await self.planner.run_async(ctx) # 1. Planification
         # 2. Logique conditionnelle
         if ctx.session.state.get("complexity") > 5:
             # Logique multi-chapitres
@@ -91,18 +75,18 @@ class StoryFlowAgent(BaseAgent):
         else:
             # Logique simple
             ...
-        
         # 3. Édition finale
         return await self.editor.run_async(ctx)
 ```
 
-Notes:
-_run_async_impl est où vous implémentez votre logique custom
-<!-- .slide -->
+_run_async_impl est la méthode où vous implémentez votre logique custom
+<!-- .element: class="admonition note" -->
+
+##==##
+
+<!-- .slide: class="with-code" -->
 
 # Implémentation de logique custom
-
-<br>
 
 ## Opérations courantes
 
@@ -113,7 +97,6 @@ _run_async_impl est où vous implémentez votre logique custom
 async def _run_async_impl(self, ctx: SessionContext):
     # Lire l'état
     user_level = ctx.session.state.get("user_level", "beginner")
-    
     # Écrire dans l'état
     ctx.session.state["processed"] = True
 ```
@@ -133,13 +116,11 @@ else:
     await self.agent_b.run_async(ctx)
 ```
 
-Notes:
-Vous avez un contrôle total sur quand et comment appeler les sous-agents
+##==##
+
 <!-- .slide -->
 
 # Gestion de l'état
-
-<br>
 
 ## State management dans Custom Agents
 
@@ -166,15 +147,15 @@ await self.sub_agent.run_async(ctx)  # Peut accéder à shared_data
 
 <br>
 
-> 💡 L'état persiste pendant toute la durée de la session
+L'état persiste pendant toute la durée de la session
+<!-- .element: class="admonition note" -->
 
-Notes:
-Utilisez l'état pour coordonner entre différentes parties de votre logique
-<!-- .slide -->
+
+##==##
+
+<!-- .slide: class="with-code max-height" -->
 
 # Exemple pratique : Agent d'apprentissage adaptatif
-
-<br>
 
 ## Adaptation dynamique au niveau de l'utilisateur
 

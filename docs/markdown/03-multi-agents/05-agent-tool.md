@@ -8,8 +8,6 @@
 
 # Agent-as-a-Tool : Concept
 
-<br>
-
 ## Appeler un agent comme un outil
 
 <br>
@@ -29,8 +27,6 @@ Conceptuellement similaire à créer une fonction Python qui appelle un autre ag
 <!-- .slide -->
 
 # Sub-Agent vs Agent-as-a-Tool
-
-<br>
 
 ## Différences clés
 
@@ -54,11 +50,9 @@ L'agent-as-a-tool est invoqué dynamiquement par le LLM si nécessaire
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Agent-as-a-Tool : Implémentation
-
-<br>
 
 ## Code Python
 
@@ -90,11 +84,9 @@ Le LLM de l'assistant décide quand invoquer calc_tool
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code" -->
 
 # Options de personnalisation
-
-<br>
 
 ## Configuration d'AgentTool
 
@@ -127,8 +119,6 @@ skip_summarization est utile quand la réponse de l'agent-outil est déjà bien 
 
 # Quand utiliser Agent-as-a-Tool ?
 
-<br>
-
 ## Cas d'usage typiques
 
 <br>
@@ -154,18 +144,14 @@ Le LLM choisit quand et quel outil appeler basé sur le contexte
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Exemple pratique : Support client
 
-<br>
-
 ## Agent avec spécialistes multiples
 
-<br>
-
 ```python
-# Créer les agents spécialisés
+# Définition des agents spécialisés
 billing_agent = LlmAgent(
     name="BillingSpecialist",
     system_instruction="Expert en facturation et paiements"

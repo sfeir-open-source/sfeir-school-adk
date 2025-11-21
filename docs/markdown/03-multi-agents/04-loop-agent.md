@@ -8,11 +8,7 @@
 
 # Loop Agent : Vue d'ensemble
 
-<br>
-
 ## Exécution itérative avec condition
-
-<br>
 
 Un **Loop Agent** exécute **répétitivement** ses sous-agents jusqu'à ce qu'une condition soit remplie.
 
@@ -46,8 +42,6 @@ Utile pour le raffinement itératif et les tentatives avec retry
 
 # Quand utiliser Loop Agent ?
 
-<br>
-
 ## Cas d'usage typiques
 
 <br>
@@ -62,11 +56,6 @@ Tenter API call → Si échec, réessayer avec backoff
 Générer → Évaluer → Si qualité insuffisante, améliorer
 ```
 
-### 📊 Polling d'API
-```
-Vérifier statut → Si non terminé, attendre et réessayer
-```
-
 ### 🎯 Amélioration progressive
 ```
 Code → Tests → Si tests échouent, corriger le code
@@ -74,18 +63,18 @@ Code → Tests → Si tests échouent, corriger le code
 
 <br>
 
-> **Règle d'or** : Utilisez Loop Agent pour les tâches qui nécessitent **plusieurs tentatives** ou **amélioration progressive**
+Utilisez Loop Agent pour les tâches qui nécessitent **plusieurs tentatives** ou **amélioration progressive**
+
+<!-- .element: class="admonition important" -->
 
 Notes:
 Toujours définir une condition d'arrêt pour éviter les boucles infinies
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Loop Agent : Implémentation
-
-<br>
 
 ## Code Python
 
@@ -121,8 +110,6 @@ La boucle s'arrête quand validation_passed est True OU après 5 itérations max
 
 # Conditions d'arrêt
 
-<br>
-
 ## Stratégies de terminaison de boucle
 
 <br>
@@ -144,18 +131,17 @@ stop_condition=lambda ctx: ctx.session.state.get("task_completed") == True
 
 <br>
 
-> ⚠️ **Important** : Toujours définir `max_iterations` pour éviter les boucles infinies
+Toujours définir `max_iterations` pour éviter les boucles infinies
+<!-- .element: class="admonition warning" -->
 
 Notes:
 Combinez plusieurs conditions pour plus de contrôle
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Exemple pratique : Raffinement de contenu
-
-<br>
 
 ## Amélioration itérative jusqu'à qualité acceptable
 
@@ -171,7 +157,7 @@ quality_checker = LlmAgent(
     name="QualityChecker",
     system_instruction="""Évalue la qualité (1-10) sur:
     - Clarté, Engagement, SEO
-    - Met 'quality_passed' à True si score >= 8"""
+    - Passe 'quality_passed' à True si score >= 8"""
 )
 
 content_refinement = LoopAgent(

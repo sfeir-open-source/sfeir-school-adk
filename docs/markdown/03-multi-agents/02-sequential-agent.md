@@ -8,8 +8,6 @@
 
 # Sequential Agent : Vue d'ensemble
 
-<br>
-
 ## Le pattern de la chaîne d'assemblage
 
 <br>
@@ -38,8 +36,6 @@ Comme une chaîne de production : chaque étape doit être complétée avant la 
 
 # Quand utiliser Sequential Agent ?
 
-<br>
-
 ## Cas d'usage typiques
 
 <br>
@@ -61,18 +57,18 @@ Recherche ➜ Plan ➜ Rédaction ➜ Révision
 
 <br>
 
-> **Règle d'or** : Utilisez Sequential Agent quand les étapes **dépendent les unes des autres**
+Utilisez Sequential Agent quand les étapes **dépendent les unes des autres**
+
+<!-- .element: class="admonition important" -->
 
 Notes:
 Chaque étape nécessite les résultats de l'étape précédente
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Sequential Agent : Implémentation
-
-<br>
 
 ## Code Python
 
@@ -101,11 +97,9 @@ Les agents s'exécutent dans l'ordre du tableau : step1 → step2 → step3
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code" -->
 
 # Gestion de l'état séquentiel
-
-<br>
 
 ## Passage de données entre agents
 
@@ -128,22 +122,20 @@ results = analyze(ctx.session.state.get("cleaned_data"))
 
 <br>
 
-> L'état est **partagé** entre tous les agents de la hiérarchie
+L'état est **partagé** entre tous les agents de la hiérarchie
+
+<!-- .element: class="admonition tip" -->
 
 Notes:
 Comme un tableau blanc partagé que chaque agent peut lire et modifier
 
 ##==##
 
-<!-- .slide -->
+<!-- .slide: class="with-code max-height" -->
 
 # Exemple pratique : Création d'article de blog
 
-<br>
-
 ## Pipeline de génération de contenu
-
-<br>
 
 ```python
 research_agent = LlmAgent(
