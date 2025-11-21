@@ -27,7 +27,6 @@ function multiAgentsSlides() {
     '03-multi-agents/05-agent-tool.md',
     '03-multi-agents/06-custom-agent.md',
     '03-multi-agents/07-a2a-protocol.md',
-    '03-multi-agents/99-lab-multi-agent.md',
   ];
 }
 
