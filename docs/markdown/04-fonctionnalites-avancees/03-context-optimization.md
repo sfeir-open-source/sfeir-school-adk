@@ -78,7 +78,6 @@ Pour gérer une conversation "infinie", on ne peut pas tout garder. La compressi
 
 - **Événement 3 terminé** : Les 3 premiers événements sont compressés en un résumé.
 - **Événement 6 terminé** : Les événements 3 à 6 sont compressés, avec un chevauchement d'un événement précédent.
-- **Événement 9 terminé** : Les événements 6 à 9 sont compressés, avec un chevauchement d'un événement précédent.
 
 Notes:
 C'est transparent pour l'utilisateur. Le modèle a "mémoire" des faits anciens via le résumé, mais travaille sur un contexte court.
