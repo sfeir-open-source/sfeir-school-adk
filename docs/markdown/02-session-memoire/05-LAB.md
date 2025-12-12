@@ -35,8 +35,6 @@ Allez dans le dossier### Go to `02-session-lab`
 
 # Aide-mémoire
 
-## Snippets utiles
-
 ### Sauvegarder en mémoire (Callback)
 ```python
 async def auto_save_callback(ctx):
