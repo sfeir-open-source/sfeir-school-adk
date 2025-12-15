@@ -73,7 +73,7 @@ class TripPlan(BaseModel):
 
 planner = LlmAgent(
     name="Planner",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     output_schema=TripPlan, # Force le JSON strict
     system_instruction="Génère un plan de voyage structuré."
 )

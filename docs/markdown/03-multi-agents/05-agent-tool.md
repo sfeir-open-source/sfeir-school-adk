@@ -63,7 +63,7 @@ from google.adk.tools import AgentTool
 # Créer un agent spécialisé
 calculator_agent = LlmAgent(
     name="Calculator",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     system_instruction="Effectue des calculs mathématiques précis"
 )
 
@@ -73,7 +73,7 @@ calc_tool = AgentTool(agent=calculator_agent)
 # Agent principal avec l'agent-outil
 main_agent = LlmAgent(
     name="Assistant",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     system_instruction="Assistant général qui peut utiliser une calculatrice",
     tools=[calc_tool]  # Agent en tant qu'outil
 )

@@ -22,7 +22,7 @@ adk create hello_agent
 ```
 
 La commande va vous demander de choisir un model et un backend, choisissez:
-- `1. gemini-2.0-flash-001`
+- `1. gemini-2.5-flash`
 - `2. Google AI`
 
 Ensuite générez une clef d'API depuis AI Studio (https://aistudio.google.com/apikey) ou demandez une clef d'api au formateur.
@@ -37,7 +37,7 @@ Explorez le contenu du fichier `main.py`, qui contient la logique de votre agent
 from google.adk.agents import Agent
 
 root_agent = Agent(
-    model='gemini-2.0-flash-001',
+    model='gemini-2.5-flash',
     name='root_agent',
     description='A helpful assistant for user questions.',
     instruction='Answer user questions to the best of your knowledge',

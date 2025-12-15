@@ -11,7 +11,7 @@
 ```python
 # ❌ MAUVAIS : Tout donner à l'agent
 agent = client.agents.create(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash',
     tools=[
         all_database_tools,
         all_admin_tools,
@@ -21,7 +21,7 @@ agent = client.agents.create(
 
 # ✅ BON : Outils spécifiques au contexte
 agent = client.agents.create(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash',
     tools=[
         read_orders_tool,      # Lecture seulement
         search_products_tool    # Recherche
@@ -183,7 +183,7 @@ tools = [
     generate_summary_tool  # 4. Synthèse
 ]
 agent = client.agents.create(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash',
     instructions=agent_instructions,
     tools=tools
 )

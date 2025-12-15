@@ -118,7 +118,7 @@ from google.adk.agents import LlmAgent
 # Définir l'agent avec des placeholders
 agent = LlmAgent(
     name="PersonalAssistant",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction="""
 Tu es un assistant personnel.
 Le nom de l'utilisateur est : {user:name}.

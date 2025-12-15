@@ -48,7 +48,7 @@ def inject_security_context(model_input):
 
 my_agent = LlmAgent(
     name="SecureAgent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     # Attachement des callbacks
     before_agent_callback=log_start,
     before_model_callback=inject_security_context

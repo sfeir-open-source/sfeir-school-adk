@@ -78,7 +78,7 @@ from google.adk.agents import SequentialAgent, LlmAgent
 # Définir les sous-agents
 step1 = LlmAgent(
     name="DataFetcher",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     system_instruction="Récupère des données depuis les sources"
 )
 

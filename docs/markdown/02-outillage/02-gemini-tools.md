@@ -14,7 +14,7 @@ from google.adk.tools import google_search
 
 root_agent = Agent(
     name="basic_search_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description="Agent to answer questions using Google Search.",
     instruction="I can answer your questions by searching the internet. Just ask me anything!",
     # google_search is a pre-built tool which allows the agent to perform Google searches.
@@ -49,7 +49,7 @@ from google.adk.code_executors import BuiltInCodeExecutor
 
 code_agent = LlmAgent(
     name="calculator_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     code_executor=BuiltInCodeExecutor(),
     instruction="""You are a calculator agent.
     When given a mathematical expression, write and execute Python code to calculate the result.
@@ -152,7 +152,7 @@ gke_executor = GkeCodeExecutor(
 
 gke_agent = LlmAgent(
     name="gke_coding_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     instruction="You are a helpful AI agent that writes and executes Python code.",
     code_executor=gke_executor,
 )

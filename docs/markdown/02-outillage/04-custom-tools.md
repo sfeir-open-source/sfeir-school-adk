@@ -72,7 +72,7 @@ def get_weather(city: str, unit: str):
 
 weather_agent = LlmAgent(
     name="weather_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     tools=[get_weather],
     instruction="""You are a weather agent
     When asked for the weather you can use the get_weather tool with unit and city to answer the user
@@ -240,7 +240,7 @@ Notes:
 
 ```python
 root_agent = LlmAgent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash',
     name='maps_assistant_agent',
     instruction='Help the user with mapping, directions, and finding places using Google Maps tools.',
     tools=[

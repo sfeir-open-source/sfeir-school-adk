@@ -2,7 +2,7 @@ from google.adk.agents import Agent
 from google.adk.tools import google_search
 
 root_agent = Agent(
-    model='gemini-2.0-flash-001',
+    model='gemini-2.5-flash',
     name='root_agent',
     description='An agent searching the web to get news about IA advancements and new models.',
     instruction="""
