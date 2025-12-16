@@ -1,4 +1,4 @@
-# 03-workshop-session Instructions
+# 03-workshop-session instructions
 
 ## How to run?
 
