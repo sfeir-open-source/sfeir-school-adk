@@ -1,8 +1,17 @@
+import { Reveal as Reveal_2 } from '@talk-control/talk-control-revealjs-extensions';
+
+export { Reveal_2 as Reveal }
+
 export declare const SfeirThemeInitializer: {
-    /**
-     * @param {() => Array.<string>} slidesFactory
-     */
-    init(slidesFactory: (showType?: string) => SlidePath[]): Promise<void>;
+    init(params: ((showType?: string) => SlidePath[]) | SfeirThemeInitializerOptions): Promise<void>;
+};
+
+declare type SfeirThemeInitializerOptions = {
+    slidesFactory: (showType?: string) => SlidePath[];
+    knowStyles?: string[];
+    plugins?: Reveal.PluginFunction[];
+    defaultLang?: string;
+    extrasRenderAttr?: string;
 };
 
 declare interface SlidePath {
