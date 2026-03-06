@@ -23,9 +23,9 @@ Credentials
 <!-- .element: class="center" -->
 <br>
 
-![](fa-user 'tc-icons fa fa-solid tc-big')<!-- .element: style="--tc-icon-color:var(--light-grey);" --> sfeir-guest
+![](fa-user 'tc-icons fa fa-solid tc-big')<!-- .element: style="--tc-icon-color:var(--light-grey);" --> sfeirlille_guest
 
-![](fa-lock 'tc-icons fa fa-solid tc-big')<!-- .element: style="--tc-icon-color:var(--light-grey);" --> PWD
+![](fa-lock 'tc-icons fa fa-solid tc-big')<!-- .element: style="--tc-icon-color:var(--light-grey);" --> 
 
 ##==##
 
