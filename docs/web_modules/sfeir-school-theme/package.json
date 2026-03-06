@@ -1,6 +1,6 @@
 {
     "name": "sfeir-school-theme",
-    "version": "4.0.0-rc-14",
+    "version": "4.0.0-rc-16",
     "description": "Sfeir School Theme for RevealJS",
     "files": [
         "dist"
@@ -44,7 +44,7 @@
         "lint": "eslint src/ cli/",
         "lint:fix": "eslint --fix src/ cli/",
         "cli-build": "tsup --config ./tsup.cli.config.ts",
-        "cli-run": "node dist/cli/main.js"
+        "cli-run": "node dist/sfeir-school-theme-cli.mjs"
     },
     "repository": {
         "type": "git",
@@ -64,7 +64,7 @@
     },
     "homepage": "https://github.com/sfeir-open-source/sfeir-school-theme#readme",
     "dependencies": {
-        "@talk-control/talk-control-revealjs-extensions": "^1.0.0-rc-3",
+        "@talk-control/talk-control-revealjs-extensions": "^1.0.0-rc-4",
         "lit-html": "^3.1.4"
     },
     "devDependencies": {
